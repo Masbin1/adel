@@ -8,26 +8,29 @@
   </head>
   <body class="font-sans bg-white">
     <!-- Navbar (optional placeholder) -->
-    <header
-      class="bg-white/80 backdrop-blur-sm fixed w-full top-0 z-50 shadow-sm"
-    >
+    <header class="relative w-full fixed top-0 left-0 z-50">
+      <!-- Background image -->
       <div
-        class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center text-sm text-gray-700"
-      >
-        <div class="flex items-center space-x-4">
-          <img src="src/img/logo.png" alt="Logo" class="h-6" />
-          <nav class="space-x-6">
-            <a href="#" class="hover:underline">Rumah</a>
-            <a href="#" class="hover:underline">Menu</a>
-            <a href="#" class="text-red-600 font-semibold underline"
-              >Kolaborasi</a
-            >
-            <a href="#" class="hover:underline">Tentang Kami</a>
+        class="absolute inset-0 bg-[url('src/img/Dekstop1.png')] bg-cover bg-center"
+      ></div>
+      <!-- Overlay blur -->
+      <div class="absolute inset-0 bg-black/30 backdrop-blur-md"></div>
+
+      <!-- Konten header -->
+      <div class="relative flex items-center justify-between px-8 py-4">
+        <!-- Kiri: Logo + Menu -->
+        <div class="flex items-center space-x-8">
+          <img src="src/img/logo1.png" alt="Logo" class="h-10" />
+          <nav class="flex space-x-8 text-white font-medium">
+            <a href="index.html" class="hover:text-red-600">Rumah</a>
+            <a href="menu.html" class="hover:text-red-600">Menu</a>
+            <a href="kolaborasi.html" class="hover:text-red-600">Kolaborasi</a>
+            <a href="tentang.html" class="text-red-600">Tentang Kami</a>
           </nav>
         </div>
-        <div>
-          <button class="text-xs text-gray-600 hover:underline">Bahasa</button>
-        </div>
+
+        <!-- Kanan: Bahasa -->
+        <div class="text-white font-medium">Bahasa</div>
       </div>
     </header>
 
@@ -47,12 +50,12 @@
         </div>
 
         <!-- Gambar (video thumbnail) di kanan -->
-        <div class="max-w-xl mx-auto">
-          <div class="relative">
+        <div class="max-w-full mx-auto">
+          <div class="relatiullve">
             <img
               src="src/img/page4/tentang1.png"
               alt="Video 1"
-              class="w-full"
+              class="w-[900px] h-[400px] object-cover"
             />
             <div class="absolute inset-0 flex items-center justify-center">
               <img src="src/img/icons/play.png" alt="Play" class="h-12 w-12" />
@@ -66,17 +69,17 @@
         <img
           src="src/img/page4/tentang2.png"
           alt="Tentang 2"
-          class="w-[400px] h-[400px] object-cover"
+          class="w-[600px] h-[400px] object-cover"
         />
         <img
           src="src/img/page4/IMG_4534.JPG"
           alt="Tentang 3"
-          class="w-[400px] h-[400px] object-cover"
+          class="w-[600px] h-[400px] object-cover"
         />
         <img
           src="src/img/page4/IMG_4533.JPG"
           alt="Tentang 4"
-          class="w-[400px] h-[400px] object-cover"
+          class="w-[600px] h-[400px] object-cover"
         />
       </section>
 
@@ -121,32 +124,59 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-[#5e0f1b] text-white mt-16">
+    <footer class="relative text-white">
+      <!-- Background image -->
       <div
-        class="max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-8 text-sm"
+        class="absolute inset-0 bg-[url('src/img/page1/terbaru.png')] bg-cover bg-center"
+      ></div>
+      <!-- Overlay blur -->
+      <div class="absolute inset-0 bg-black/40 backdrop-blur-md"></div>
+
+      <!-- Konten utama -->
+      <div
+        class="relative max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-8"
       >
+        <!-- Tentang Kami -->
         <div>
-          <h3 class="font-semibold mb-2">Tentang Kami</h3>
-          <p>Lokasi Rumah Produksi<br />Toko</p>
+          <h3 class="text-2xl font-bold mb-2">Tentang Kami</h3>
+          <p class="text-sm">Lokasi Rumah Produksi<br />Toko</p>
         </div>
+
+        <!-- Kontak -->
         <div>
-          <h3 class="font-semibold mb-2">Kontak</h3>
-          <p>WA: +62-811-2074-435</p>
-          <p>Email: service@palanusantara.com</p>
+          <h3 class="text-2xl font-bold mb-2">Kontak</h3>
+          <p class="text-sm">WA : +62-811-2074-435</p>
+          <p class="text-sm">Email: service@palanusantara.com</p>
         </div>
+
+        <!-- Harmoni Alam dan Budaya -->
         <div>
-          <h3 class="font-semibold mb-2">Harmoni Alam Dan Budaya</h3>
-          <p>
+          <h3 class="text-2xl font-bold mb-2">Harmoni Alam Dan Budaya</h3>
+          <p class="text-sm">
             PALA adalah perusahaan berbasis desain yang mempromosikan
-            nilai-nilai budaya dalam desain dan setiap produknya.
+            nilai-nilai budaya dalam desain di setiap produknya. Pala menyandang
+            misi untuk memanfaatkan potensi Nusantara sebaik-baiknya untuk
+            ditransformasikan menjadi produk kontemporer yang dapat diakses oleh
+            semua orang.
           </p>
         </div>
       </div>
-      <div class="flex justify-center space-x-4 py-4 border-t border-white/20">
-        <a href="#"><img src="src/img/icons/ig.png" class="h-5" /></a>
-        <a href="#"><img src="src/img/icons/linkedin.png" class="h-5" /></a>
-        <a href="#"><img src="src/img/icons/youtube.png" class="h-5" /></a>
+
+      <!-- Bagian bawah: ikon sosial media -->
+      <div
+        class="relative bg-[#c62033] flex justify-center space-x-6 py-4 text-xl"
+      >
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
       </div>
     </footer>
+
+    <!-- Tambahkan link Font Awesome di <head> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </body>
 </html>
