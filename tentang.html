@@ -51,30 +51,22 @@
 
         <!-- Gambar (video thumbnail) di kanan -->
         <div class="max-w-full mx-auto">
-          <div class="relative">
-            <!-- Thumbnail -->
+          <div class="video-container">
             <img
               src="src/img/page4/tentang1.png"
               alt="Video 1"
-              class="w-[900px] h-[400px] object-cover"
-              id="thumbnail"
+              class="w-[900px] h-[400px] object-cover video-thumbnail"
             />
-            <!-- Play Button -->
             <div
-              class="absolute inset-0 flex items-center justify-center ml-[50px] mt-[30px] cursor-pointer"
-              id="playButton"
+              class="absolute inset-0 flex items-center justify-center ml-[900px] mt-[-230px] cursor-pointer play-button"
             >
               <img src="src/img/play.png" alt="Play" class="h-12 w-12" />
             </div>
-
-            <!-- Video (disembunyikan dulu) -->
             <video
-              id="videoPlayer"
-              class="hidden w-[900px] h-[400px] object-cover"
+              class="hidden w-[900px] h-[400px] object-cover video-player"
               controls
             >
               <source src="src/video/tentang_kami.mp4" type="video/mp4" />
-              Browser Anda tidak mendukung video.
             </video>
           </div>
         </div>
@@ -127,26 +119,19 @@
 
       <section
         style="background-image: url('src/img/page4/tentang3.png')"
-        class="bg-cover bg-center h-[90vh] relative"
+        class="bg-cover bg-center h-[90vh] relative video-container"
       >
-        <!-- Play Button -->
-        <div class="absolute inset-0 flex items-center justify-center">
+        <div
+          class="absolute inset-0 flex items-center justify-center play-button"
+        >
           <img
             src="src/img/play.png"
             alt="Play Button"
             class="h-12 w-12 cursor-pointer"
-            id="playButton"
           />
         </div>
-
-        <!-- Video (disembunyikan dulu) -->
-        <video
-          id="videoPlayer"
-          class="hidden w-full h-full object-cover"
-          controls
-        >
+        <video class="hidden w-full h-full object-cover video-player" controls>
           <source src="src/video/gatan.mp4" type="video/mp4" />
-          Browser Anda tidak mendukung video.
         </video>
       </section>
     </main>
@@ -207,15 +192,17 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <script>
-      const playButton = document.getElementById("playButton");
-      const thumbnail = document.getElementById("thumbnail");
-      const videoPlayer = document.getElementById("videoPlayer");
+      document.querySelectorAll(".video-container").forEach((container) => {
+        const playButton = container.querySelector(".play-button");
+        const thumbnail = container.querySelector(".video-thumbnail");
+        const videoPlayer = container.querySelector(".video-player");
 
-      playButton.addEventListener("click", () => {
-        thumbnail.style.display = "none"; // sembunyikan thumbnail
-        playButton.style.display = "none"; // sembunyikan tombol play
-        videoPlayer.classList.remove("hidden");
-        videoPlayer.play(); // jalankan video
+        playButton.addEventListener("click", () => {
+          if (thumbnail) thumbnail.style.display = "none";
+          playButton.style.display = "none";
+          videoPlayer.classList.remove("hidden");
+          videoPlayer.play();
+        });
       });
     </script>
   </body>
