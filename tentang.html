@@ -57,8 +57,10 @@
               alt="Video 1"
               class="w-[900px] h-[400px] object-cover"
             />
-            <div class="absolute inset-0 flex items-center justify-center">
-              <img src="src/img/icons/play.png" alt="Play" class="h-12 w-12" />
+            <div
+              class="absolute inset-0 flex items-center justify-center ml-[900px] mt-[-250px]"
+            >
+              <img src="src/img/play.png" alt="Play" class="h-12 w-12" />
             </div>
           </div>
         </div>
@@ -111,16 +113,39 @@
 
       <section
         style="background-image: url('src/img/page4/tentang3.png')"
-        class="bg-cover bg-center h-[90vh]"
+        class="bg-cover bg-center h-[90vh] relative"
       >
-        <div class="relative inset-0 flex items-center justify-center">
+        <!-- Play Button -->
+        <div class="absolute inset-0 flex items-center justify-center">
           <img
-            src="src/img/icons/play.png"
+            src="src/img/play.png"
             alt="Play Button"
-            class="h-12 w-12"
+            class="h-12 w-12 cursor-pointer"
+            id="playButton"
           />
         </div>
+
+        <!-- Video (disembunyikan dulu) -->
+        <video
+          id="videoPlayer"
+          class="hidden w-full h-full object-cover"
+          controls
+        >
+          <source src="src/video/gatan.mp4" type="video/mp4" />
+          Browser Anda tidak mendukung video.
+        </video>
       </section>
+
+      <script>
+        const playButton = document.getElementById("playButton");
+        const videoPlayer = document.getElementById("videoPlayer");
+
+        playButton.addEventListener("click", () => {
+          playButton.style.display = "none"; // hilangkan tombol play
+          videoPlayer.classList.remove("hidden"); // munculkan video
+          videoPlayer.play(); // langsung jalan
+        });
+      </script>
     </main>
 
     <!-- Footer -->
